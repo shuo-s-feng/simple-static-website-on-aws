@@ -1,0 +1,5 @@
+npm run clean
+npm run bootstrap
+npm run build
+cd ./packages/infrastructure
+cdk deploy

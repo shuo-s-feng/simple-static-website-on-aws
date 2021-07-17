@@ -1,0 +1,30 @@
+{
+	"name": "aws-infrastructure",
+	"version": "1.0.0",
+	"description": "Infrastructure for an HTTPS static site using S3 and CloudFront",
+	"scripts": {
+		"build": "tsc",
+		"clean": "rm -rf cdk.out && rm -rf dist && (rm package-lock.json || true)",
+		"clean:all": "npm run clean && rm -rf node_modules",
+		"test": "echo 'No tests specified'",
+		"watch": "tsc -w"
+	},
+	"author": {
+		"name": "Shuo Feng"
+	},
+	"devDependencies": {
+		"@types/node": "^10.17.0",
+		"typescript": "~3.9.7"
+	},
+	"dependencies": {
+		"@aws-cdk/aws-certificatemanager": "^1.88.0",
+		"@aws-cdk/aws-cloudfront": "^1.88.0",
+		"@aws-cdk/aws-iam": "^1.88.0",
+		"@aws-cdk/aws-route53": "^1.88.0",
+		"@aws-cdk/aws-route53-targets": "^1.88.0",
+		"@aws-cdk/aws-s3": "^1.88.0",
+		"@aws-cdk/aws-s3-deployment": "^1.88.0",
+		"@aws-cdk/core": "^1.88.0",
+		"aws-cdk": "^1.88.0"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"devDependencies": {
+		"lerna": "^2.5.1",
+		"prettier": "^2.3.0"
+	},
+	"scripts": {
+		"bootstrap": "npm install && lerna bootstrap",
+		"build": "lerna run build",
+		"clean": "lerna run clean",
+		"clean:all": "lerna run clean:all",
+		"cdk": "lerna exec 'cdk' --scope aws-infrastructure",
+		"start": "lerna exec 'npm start' --scope react-static-website",
+		"test": "lerna run test",
+		"release": "npm run bootstrap && npm run build && npm run test"
+	}
+}
