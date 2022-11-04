@@ -45,6 +45,7 @@ export class Website extends Construct {
 		// S3 static website bucket
 		this.bucket = new WebsiteBucket(this, 'WebsiteBucket', {
 			websiteIndexDocument: 'index.html',
+			websiteErrorDocument: 'index.html',
 			publicReadAccess: false,
 			removalPolicy: RemovalPolicy.RETAIN,
 			encryption: BucketEncryption.S3_MANAGED,
@@ -60,6 +61,13 @@ export class Website extends Construct {
 						s3BucketSource: this.bucket,
 					},
 					behaviors: [{ isDefaultBehavior: true }],
+				},
+			],
+			errorConfigurations: [
+				{
+					errorCode: 404,
+					responseCode: 200,
+					responsePagePath: '/index.html',
 				},
 			],
 		};
